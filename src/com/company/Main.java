@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите p ");
+        System.out.print("Введите x ");
         int x = scanner.nextInt();
         Formula po = new Formula(x);
         po.displayFormula();
@@ -31,7 +31,7 @@ public class Main {
         if (word2.equals("upload")) {
             try (ObjectInputStream pt = new ObjectInputStream(new FileInputStream("D://LOK.txt"))) {
                 Formula form = (Formula) pt.readObject();
-                System.out.println(form.p);
+                System.out.println(form.x);
                 System.out.println("Ok2");
             } catch (IOException | ClassNotFoundException ex) {
                 ex.printStackTrace();
@@ -43,12 +43,12 @@ public class Main {
     }
 }
 class Formula implements Serializable {
-    float p;
-    public Formula(float p) {
-        this.p =p;
+    float x;
+    public Formula(float x) {
+        this.x =x;
     }
     public void displayFormula() {
-        double vector = p - (Math.sin(p));
+        double vector =x - (Math.sin(x));
         System.out.println(vector);
     }
 }
